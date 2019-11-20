@@ -4,17 +4,65 @@ import ActiveQuiz from "../../components/ActiveQuiz/ActiveQuiz";
 
 class Quiz extends Component {
     state = {
+        activeQuestion: 0,
+        answerState: null, // { [id]: 'success' 'error' }
         quiz: [
             {
+                question: 'Какой транспорт лишний?',
+                rightAnswerId: 3,
+                id: 1,
                 answers: [
-                    {text: 'Вопрос 1'},
-                    {text: 'Вопрос 2'},
-                    {text: 'Вопрос 3'},
-                    {text: 'Вопрос 4'}
+                    {text: 'Автомобиль', id: 1},
+                    {text: 'Фургон', id: 2},
+                    {text: 'Самолет', id: 3},
+                    {text: 'Грузовик', id: 4}
+                ]
+            },
+            {
+                question: 'Какой предмет лишний?',
+                rightAnswerId: 1,
+                id: 2,
+                answers: [
+                    {text: 'Кеды', id: 1},
+                    {text: 'Пуловер', id: 2},
+                    {text: 'Рубашка', id: 3},
+                    {text: 'Футболка', id: 4}
                 ]
             }
         ]
     };
+
+    onAnswerClickHandler = answerId => {
+        const question = this.state.quiz[this.state.activeQuestion];
+
+        if (question.rightAnswerId === answerId) {
+
+            this.setState({
+                answerState: {[answerId]: 'success'}
+            });
+
+            const timeout = window.setTimeout(() => {
+                if (this.isQuizFinished()) {
+                    console.log('Finished')
+                } else {
+                    this.setState({
+                        activeQuestion: this.state.activeQuestion + 1,
+                        answerState: null
+                    })
+                }
+                window.clearTimeout(timeout)
+            }, 1000);
+
+        } else {
+            this.setState({
+                answerState: {[answerId]: 'error'}
+            })
+        }
+    };
+
+    isQuizFinished() {
+        return this.state.activeQuestion + 1 === this.state.quiz.length
+    }
 
     render() {
         return (
@@ -22,7 +70,12 @@ class Quiz extends Component {
                 <div className={classes.QuizWrapper}>
                     <h1>Ответьте на все вопросы</h1>
                     <ActiveQuiz
-                        answers={this.state.quiz[0].answers}
+                        answers={this.state.quiz[this.state.activeQuestion].answers}
+                        question={this.state.quiz[this.state.activeQuestion].question}
+                        onAnswerClick={this.onAnswerClickHandler}
+                        quizLength={this.state.quiz.length}
+                        answerNumber={this.state.activeQuestion + 1}
+                        state={this.state.answerState}
                     />
                 </div>
             </div>
