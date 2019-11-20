@@ -1,9 +1,6 @@
-import React, {Component} from 'react';
-import Layout from './hoc/Layout/Layout';
-// import classes from './App.module.scss';
-import Quiz from "./containers/Quiz/Quiz";
-
-// console.log(classes);
+import React, {Component} from 'react'
+import Layout from './hoc/Layout/Layout'
+import Quiz from "./containers/Quiz/Quiz"
 
 class App extends Component {
     render() {

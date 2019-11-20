@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-// import '../../App.module.scss';
 import classes from './Layout.module.scss'
 
 class Layout extends Component {
