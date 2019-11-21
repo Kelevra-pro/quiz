@@ -61,7 +61,10 @@
     "workbox-webpack-plugin": "4.3.1",
     "yarn": "^1.19.1"
   },
+  "homepage": "https://kelevra-pro.github.io/react-quiz/",
   "scripts": {
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build",
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"
@@ -133,5 +136,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
   }
 }
