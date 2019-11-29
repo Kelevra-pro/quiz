@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import classes from './QuizList.module.scss'
-// import index from "postcss-normalize";
 import {NavLink} from "react-router-dom";
 
 export default class QuizList extends Component {
