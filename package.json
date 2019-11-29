@@ -5,8 +5,8 @@
   "dependencies": {
     "@babel/core": "7.6.0",
     "@svgr/webpack": "4.3.2",
-    "@typescript-eslint/eslint-plugin": "^2.2.0",
-    "@typescript-eslint/parser": "^2.2.0",
+    "@typescript-eslint/eslint-plugin": "^2.9.0",
+    "@typescript-eslint/parser": "^2.9.0",
     "babel-eslint": "10.0.3",
     "babel-jest": "^24.9.0",
     "babel-loader": "8.0.6",
@@ -17,7 +17,7 @@
     "css-loader": "2.1.1",
     "dotenv": "6.2.0",
     "dotenv-expand": "5.1.0",
-    "eslint": "^6.1.0",
+    "eslint": "^6.7.1",
     "eslint-config-react-app": "^5.0.2",
     "eslint-loader": "3.0.2",
     "eslint-plugin-flowtype": "3.13.0",
@@ -60,7 +60,7 @@
     "webpack-dev-server": "3.2.1",
     "webpack-manifest-plugin": "2.1.1",
     "workbox-webpack-plugin": "4.3.1",
-    "yarn": "^1.19.1"
+    "yarn": "^1.19.2"
   },
   "homepage": "https://kelevra-pro.github.io/quiz/",
   "scripts": {
@@ -139,6 +139,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.7.4",
     "gh-pages": "^2.1.1"
   }
 }
