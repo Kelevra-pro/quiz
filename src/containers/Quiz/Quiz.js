@@ -83,7 +83,7 @@ class Quiz extends Component {
         } catch (e) {
             console.log(e)
         }
-    }
+    };
 
     render() {
         return (
