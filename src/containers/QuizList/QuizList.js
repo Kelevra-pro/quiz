@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import classes from './QuizList.module.scss'
+
 import {NavLink} from 'react-router-dom'
 import Loader from '../../components/UI/Loader/Loader'
 import axios from '../../axios/axios-quiz'
